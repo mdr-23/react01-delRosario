@@ -1,13 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Nav from "./components/Nav";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
 
-  let mensaje = "React: Clase 01"
+export default function App() {
 
   return (
-    mensaje
+    <>
+      <Nav />
+    </>
   );
 }
 
-export default App;
