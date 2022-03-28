@@ -1,13 +1,16 @@
 import React from "react";
-import Nav from "./components/Nav";
+import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Welcome from "./components/Welcome";
 
 
 export default function App() {
 
   return (
     <>
-      <Nav />
+      <NavBar />
+
+      {/*  <Welcome nombre={"Martin"} apellido={"del Rosario"}/>*/}
     </>
   );
 }
