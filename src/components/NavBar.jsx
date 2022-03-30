@@ -1,5 +1,6 @@
 import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import CartWidget from "./CartWidget";
 
 export default function NavBar() {
 
@@ -24,7 +25,7 @@ export default function NavBar() {
             <Nav>
             <Nav.Link href="#deets">Iniciar sesión</Nav.Link>
             <Nav.Link eventKey={2} href="#memes">
-                Registrarse
+                <CartWidget />
             </Nav.Link>
             </Nav>
         </Navbar.Collapse>

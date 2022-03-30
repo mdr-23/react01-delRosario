@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "./components/NavBar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Welcome from "./components/Welcome";
+import ItemListContainer from "./components/ItemListContainer";
 
 
 export default function App() {
@@ -10,7 +10,7 @@ export default function App() {
     <>
       <NavBar />
 
-      {/*  <Welcome nombre={"Martin"} apellido={"del Rosario"}/>*/}
+      {<ItemListContainer nombre={"Martín"} apellido={"del Rosario"}/>}
     </>
   );
 }
