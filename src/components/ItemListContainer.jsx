@@ -1,12 +1,16 @@
 import React from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemCount from "./ItemCount";
 
 
-export default function ItemListContainer({nombre, apellido}) {
+export default function ItemListContainer() {
+
+  //let arrayProductos = ["IT", "Cementerio de Animales"]
 
   return (
     <>
-      <p class="text-center mt-5">Bienvenido, {nombre} {apellido}</p>
+      <div class="text-center mt-5">
+        <ItemCount stock={8}/>
+      </div>
     </>
   );
 }
