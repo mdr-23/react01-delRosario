@@ -1,15 +1,24 @@
 import React from "react";
-import ItemCount from "./ItemCount";
+import { useEffect, useState } from "react";
+import promises from "../utils/promises";
+import products from "../utils/products";
+import ItemList from "./ItemList";
 
 
 export default function ItemListContainer() {
 
-  //let arrayProductos = ["IT", "Cementerio de Animales"]
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    promises(3000, products)
+    .then(resultado => setItems(resultado))
+    .catch(error => console.log(error));
+  }, [items])
 
   return (
     <>
-      <div class="text-center mt-5">
-        <ItemCount stock={8}/>
+      <div className="text-center mt-5 d-flex justify-content-center">
+        <ItemList products={items} />
       </div>
     </>
   );

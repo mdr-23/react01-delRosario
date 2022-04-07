@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function ItemCount({ stock }) {
@@ -9,7 +8,7 @@ export default function ItemCount({ stock }) {
     function add(){
         if (count < stock){
         setCount(count + 1);
-        }
+        }  
     }
 
     function sub(){
@@ -34,10 +33,10 @@ export default function ItemCount({ stock }) {
 
   return (
     <>
-        <p>
-            <button onClick={sub} class="mx-2">-</button>
+        <p className="mt-2">
+            <button onClick={sub} className="mx-2">-</button>
             {count}
-            <button onClick={add} class="mx-2">+</button>
+            <button onClick={add} className="mx-2">+</button>
         </p>
 
         <p><button onClick={onAdd}>Agregar al Carrito</button></p>
