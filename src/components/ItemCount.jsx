@@ -33,13 +33,13 @@ export default function ItemCount({ stock }) {
 
   return (
     <>
-        <p className="mt-2">
+        <p className="mt-2 text-center">
             <button onClick={sub} className="mx-2">-</button>
             {count}
             <button onClick={add} className="mx-2">+</button>
         </p>
 
-        <p><button onClick={onAdd}>Agregar al Carrito</button></p>
+        <p className="text-center"><button onClick={onAdd}>Agregar al Carrito</button></p>
     </>
   );
 }
