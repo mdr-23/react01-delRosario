@@ -1,25 +1,30 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import promises from "../utils/promises";
-import products from "../utils/products";
+import { traerProductos } from "../utils/products";
 import ItemList from "./ItemList";
 
 
 export default function ItemListContainer() {
 
-  const [items, setItems] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    promises(3000, products)
-    .then(resultado => setItems(resultado))
-    .catch(error => console.log(error));
-  }, [items])
+    traerProductos()
+    .then((res) => setProducts(res))
+    .catch((error) => console.log(error))
+    .finally(() => {
+        setLoading(false);
+    });
+}, []);
 
   return (
     <>
-      <div className="text-center mt-5 d-flex justify-content-center">
-        <ItemList products={items} />
-      </div>
+            {loading ? (
+                <h1>Cargando productos. Por favor, espere.</h1>
+            ) : (
+                <div className="d-flex mt-5 justify-content-center"><ItemList products={products} /></div>
+            )}
     </>
   );
 }

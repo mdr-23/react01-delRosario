@@ -11,8 +11,39 @@ const products = [
         name: 'Cementerio de Animales',
         edition: "2004",
         price: '2300',
-        image: 'https://www.yumpu.com/es/image/facebook/62684896.jpg',
+        image: 'http://pm1.narvii.com/6335/73a15094a880eea05c82dee6d4733a457745a96e_00.jpg',
+    },
+    {
+        id: 3,
+        name: "El misterio de Salem's Lot",
+        edition: "1988",
+        price: '8000',
+        image: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1314735183l/12477077.jpg',
     }
 ]
+
+const product = {
+    id: 3,
+    name: "El misterio de Salem's Lot",
+    edition: "1988",
+    price: '8000',
+    image: 'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1314735183l/12477077.jpg',
+};
+
+export const traerProductos = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(products);
+        }, 3000);
+    });
+};
+
+export const traerProducto = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(product);
+        }, 1000);
+    });
+};
 
 export default products;

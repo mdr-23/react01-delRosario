@@ -1,4 +1,4 @@
-let ok = true;
+/* let ok = true;
 
 const promises = (time, task) => {
     return new Promise((resolve, reject) => {
@@ -12,4 +12,4 @@ const promises = (time, task) => {
     })
 }
 
-export default promises;
+export default promises; */
