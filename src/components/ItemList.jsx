@@ -13,7 +13,8 @@ export default function ItemList({products}) {
             image={p.image}
             edition={p.edition}
             year={p.year}
-            price={p.price} />
+            price={p.price}
+            category={p.category} />
         )
         )
 

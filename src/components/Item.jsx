@@ -8,7 +8,7 @@ export default function Item({id, name, edition, year, price, image}) {
 
   return (
     <>
-      <Card key={id} style={{ width: '18rem' }}>
+      <Card className="mx-5" key={id} style={{ width: '18rem' }}>
         <Card.Img variant="top" src={image} />
         <Card.Body>
           <Card.Title>{name}</Card.Title>
