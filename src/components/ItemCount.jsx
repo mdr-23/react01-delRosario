@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 export default function ItemCount({ stock }) {
@@ -20,12 +21,15 @@ export default function ItemCount({ stock }) {
     function onAdd(){
         if(count === 0){
             alert("No seleccionaste ningún ítem");
+            console.log(count);
         }
         if(count === 1){
-            alert("Agregaste " + count +  " ítem a tu carrito")
+            alert("Agregaste " + count +  " ítem a tu carrito");
+            console.log(count);
         }
         if(count > 1){
-            alert("Agregaste " + count + " ítems a tu carrito")
+            alert("Agregaste " + count + " ítems a tu carrito");
+            console.log(count);
         }
     }
 
@@ -39,7 +43,7 @@ export default function ItemCount({ stock }) {
             <button onClick={add} className="mx-2">+</button>
         </p>
 
-        <p className="text-center"><button onClick={onAdd}>Agregar al Carrito</button></p>
+        <p className="text-center"><Link to={`/cart`}><button disabled={count < 1 ? true : false} onClick={onAdd}>Agregar al Carrito</button></Link></p>
     </>
   );
 }

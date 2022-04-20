@@ -3,6 +3,9 @@ import ItemCount from "./ItemCount";
 
 export default function ItemDetail({id, name, edition, price, image, year}) {
 
+/*   const add = () => {
+    console.log("nro")
+  } */
 
   return (
     <>
@@ -13,7 +16,7 @@ export default function ItemDetail({id, name, edition, price, image, year}) {
               <h3>${price}</h3>
               <h4>Edición: {edition}</h4>
               <h5>Año: {year}</h5>
-              <ItemCount />
+              <ItemCount stock={8}/>
           </div>
       </div>
     </>
