@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 
-export default function ItemCount({ stock }) {
+export default function ItemCount({ stock, onAdd, item }) {
 
     const [count, setCount] = useState(0);
+    
+    const{addItem} = useContext(CartContext);
 
     function add(){
         if (count < stock){
@@ -18,7 +21,7 @@ export default function ItemCount({ stock }) {
         }
     }
 
-    function onAdd(){
+/*     function onAdd(){
         if(count === 0){
             alert("No seleccionaste ningún ítem");
             console.log(count);
@@ -31,6 +34,11 @@ export default function ItemCount({ stock }) {
             alert("Agregaste " + count + " ítems a tu carrito");
             console.log(count);
         }
+    } */
+
+    function handleClick(){
+        onAdd(count)
+        addItem({...item, cantidad : count})
     }
 
 
@@ -43,7 +51,7 @@ export default function ItemCount({ stock }) {
             <button onClick={add} className="mx-2">+</button>
         </p>
 
-        <p className="text-center"><Link to={`/cart`}><button disabled={count < 1 ? true : false} onClick={onAdd}>Agregar al Carrito</button></Link></p>
+        <p className="text-center"><Link to={`/cart`}><button disabled={count < 1 ? true : false} onClick={handleClick}>Agregar al Carrito</button></Link></p>
     </>
   );
 }
