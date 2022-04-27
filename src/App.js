@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { CartContext } from "./components/CartContext";
+import CartContextProvider, { CartContext } from "./components/CartContext";
 
 
 export default function App() {
@@ -13,23 +13,19 @@ export default function App() {
     <>
 
       <BrowserRouter>
-        <NavBar />
+        <CartContextProvider>
+          <NavBar />
 
-        <Routes>
+          <Routes>
 
-          <Route exact path="/" element={<ItemListContainer />} />
-          <Route exact path="/category/:category" element={<ItemListContainer />} />
-          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-          <Route exact path='/cart' element={<CartContext />} />
+            <Route exact path="/" element={<ItemListContainer />} />
+            <Route exact path="/category/:category" element={<ItemListContainer />} />
+            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+            <Route exact path='/cart' element={<CartContext />} />
 
-
-
-
-        </Routes>
-
+          </Routes>
       
-      
-      
+        </CartContextProvider>
       </BrowserRouter>
 
     </>
