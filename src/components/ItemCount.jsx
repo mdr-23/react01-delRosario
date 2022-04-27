@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
 
 
-export default function ItemCount({ stock, onAdd, item }) {
+export default function ItemCount({ stock, item }) {
 
     const [count, setCount] = useState(0);
     
@@ -37,7 +37,6 @@ export default function ItemCount({ stock, onAdd, item }) {
     } */
 
     function handleClick(){
-        onAdd(count)
         addItem({...item, cantidad : count})
     }
 

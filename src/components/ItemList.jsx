@@ -6,15 +6,15 @@ export default function ItemList({products}) {
 
 
   return (
-        products.map(p => (
+        products.map(item => (
             <Item 
-            key={p.id}
-            name={p.name}
-            image={p.image}
-            edition={p.edition}
-            year={p.year}
-            price={p.price}
-            category={p.category} />
+            key={item.id}
+            name={item.name}
+            image={item.image}
+            edition={item.edition}
+            year={item.year}
+            price={item.price}
+            category={item.category} />
         )
         )
 

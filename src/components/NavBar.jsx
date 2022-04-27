@@ -28,7 +28,7 @@ export default function NavBar() {
             </Nav>
             <Nav>
             <Nav.Link href="#deets">Iniciar sesión</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link>
                 <CartWidget />
             </Nav.Link>
             </Nav>
