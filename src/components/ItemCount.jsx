@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import { Button } from "react-bootstrap";
+import customCss from "./CSS/Fonts.module.css";
 
 
 export default function ItemCount({ stock, item }) {
@@ -45,12 +47,12 @@ export default function ItemCount({ stock, item }) {
   return (
     <>
         <p className="mt-2 text-center">
-            <button onClick={sub} className="mx-2">-</button>
-            {count}
-            <button onClick={add} className="mx-2">+</button>
+            <Button className={customCss.cardButtonCounter} onClick={sub}>-</Button>
+            <span className={customCss.cardTitleText}>{count}</span>
+            <Button className={customCss.cardButtonCounter} onClick={add}>+</Button>
         </p>
 
-        <p className="text-center"><Link to={`/cart`}><button disabled={count < 1 ? true : false} onClick={handleClick}>Agregar al Carrito</button></Link></p>
+        <p className="d-flex justify-content-center"><Link to={`/cart`}><Button className={customCss.cardButton} disabled={count < 1 ? true : false} onClick={handleClick}>Agregar al Carrito</Button></Link></p>
     </>
   );
 }

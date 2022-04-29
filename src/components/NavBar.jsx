@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 import CartWidget from "./CartWidget"; 
 import { Link } from "react-router-dom";
+import customCss from "./CSS/Fonts.module.css";
 
 export default function NavBar() {
 
@@ -14,7 +15,7 @@ export default function NavBar() {
     <>
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-        <Navbar.Brand><Link to={`/`} style={linkStyle}>Stephen King's</Link></Navbar.Brand>
+        <Navbar.Brand><Link to={`/`} className={customCss.brandTitle}>STEPHEN KING's</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">

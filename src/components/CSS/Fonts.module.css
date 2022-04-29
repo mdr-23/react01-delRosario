@@ -1,0 +1,57 @@
+.cardTitle {
+    color: #ed1c1c;
+    font-family: 'Bangers', cursive;;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.brandTitle{
+    color: #ed1c1c !important;
+    font-family: 'Abril Fatface' !important;
+    font-size: 35px;
+    text-decoration: none;
+}
+
+.cardTitleText{
+    font-family: 'Source Serif Pro', serif;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.cardPrice{
+    font-family: 'Bangers', serif;
+    font-weight: bolder;
+    text-align: center;
+    font-size: 22px;
+    color: #ed1c1c;
+}
+
+.cardButton{
+    background-color: #ed1c1c !important;
+    font-family: 'Bangers', serif;
+    border-color: #ed1c1c !important;
+    margin: 15px 10px 0 10px;
+    display: flex;
+    justify-content: center;
+    text-decoration: none !important;
+}
+
+.cardButtonCounter{
+    background-color: #ed1c1c !important;
+    font-family: 'Bangers', serif;
+    border-color: #ed1c1c !important;
+    margin: 0px 10px 0 10px;
+    text-decoration:none !important;
+}
+
+.cardButton:hover{
+    background-color: #ed1c1c !important;
+    text-decoration: none !important;
+}
+
+.cardButtonCounter:hover{
+    background-color: #ed1c1c !important;
+    text-decoration: none !important;
+    border-color: #ed1c1c;
+}
