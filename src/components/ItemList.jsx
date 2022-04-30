@@ -9,6 +9,7 @@ export default function ItemList({products}) {
         products.map(p => (
             <Item 
             key={p.id}
+            id={p.id}
             name={p.name}
             image={p.image}
             edition={p.edition}

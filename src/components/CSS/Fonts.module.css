@@ -35,6 +35,7 @@
     display: flex;
     justify-content: center;
     text-decoration: none !important;
+    color: #fff !important;
 }
 
 .cardButtonCounter{
@@ -48,6 +49,7 @@
 .cardButton:hover{
     background-color: #ed1c1c !important;
     text-decoration: none !important;
+    color: #fff !important;
 }
 
 .cardButtonCounter:hover{
