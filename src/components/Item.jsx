@@ -3,51 +3,34 @@ import { Card, Button } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import { Link } from "react-router-dom";
 import customCss from "./CSS/Fonts.module.css";
-import { collection,getDocs,getFirestore } from 'firebase/firestore';
 
 
-export default function Item() {
+export default function Item({id,name,image,edition,year,price}) {
 
-  const [productos, setProductos] = useState([]);
-
-  useEffect(() => {
-  const db = getFirestore();
-
-  const productosRef = collection(db, 'products');
-
-  getDocs(productosRef).then((res)=>{
-    let productos = [...res.docs];
-
-    productos = productos.map(item => ({ id: item.id, ...item.data() }));
-
-    console.log(productos);
-
-    setProductos(productos);
-    
-    //setProductos(res.docs.map((item)=>({ id: res.id, ...item.data() })));
-  });
-}, []);
+  
 
 
   return (
     <>
-      <Card className="" key={productos.id} style={{ width: '18rem' }}>
-        <Card.Img variant="top" src={productos.image} />
+    <div className="mx-3">
+      <Card key={id} style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={image} />
         <Card.Body>
-          <Card.Title className={customCss.cardTitle}>{productos.name}</Card.Title>
+          <Card.Title className={customCss.cardTitle}>{name}</Card.Title>
           <Card.Text className={customCss.cardTitleText}>
-          Edición: {productos.edition}
+          Edición: {edition}
           </Card.Text>
           <Card.Text className={customCss.cardTitleText}>
-          Año de publicación: {productos.year}
+          Año de publicación: {year}
           </Card.Text>
           <Card.Text className={customCss.cardPrice}>
-          $ {productos.price}
+          $ {price}
           </Card.Text>
-          <Button className={customCss.cardButton} as={Link} to={`/item/${productos.id}`}>Ver Detalle</Button>
+          <Button className={customCss.cardButton} as={Link} to={`/item/${id}`}>Ver Detalle</Button>
         </Card.Body>
         <ItemCount stock={8}/>
       </Card>
+    </div>
     </>
   );
 }
